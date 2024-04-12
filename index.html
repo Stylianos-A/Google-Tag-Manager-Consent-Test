@@ -6,12 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample Website</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="gtm.js" async></script>
 </head>
 
 <body>
     <h1>Welcome to our Sample Website</h1>
     <p>This is a sample website to demonstrate Google Tag Manager and Google Analytics integration.</p>
 
+    <script>
+        // Function to push the custom GTM event
+        function pushSuccessfulRegistrationEvent() {
+            console.log('Process executed at: ' + new Date());
+            window.dataLayer.push({
+                'event': 'Successful Registration'
+            });
+        }
+        
+        // Call the function initially
+        pushSuccessfulRegistrationEvent();
+        
+        // Set interval to push the event every 10 seconds
+        setInterval(pushSuccessfulRegistrationEvent, 10000); // 10000 milliseconds = 10 seconds
+    </script>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQB3TVK2" height="0" width="0"

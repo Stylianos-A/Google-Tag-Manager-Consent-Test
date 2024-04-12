@@ -19,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
             window.dataLayer.push({
                 'event': 'gtm.click',
                 'button_id': 'custom_button',
-                'consent_mode': true
+                'pre_registration': 'true'
             });
 
-            // Push consent mode as false
+            // This dataLayer push happens to avoid duplicated tags triggers
             window.dataLayer.push({
-                'consent_mode': false
+                'pre_registration': 'false'
             });
         } else {
             // If consent not granted, do nothing
